@@ -1,0 +1,69 @@
+ *  {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Rubik Mono One', sans-serif;
+ }
+
+ body {
+    display: grid; 
+    min-height: 100vh;
+    grid-template-columns: repeat(3,auto);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: 
+        "Header Header Header "
+        "Main   Main   Main   "
+        "Footer Footer Footer "
+    ;
+ }
+ .header{
+    grid-area: Header;
+    height: 100px;
+    background-color: white;
+ }
+ .main{
+     grid-area: Main;
+ }
+
+    .nav{
+        position: fixed;
+        z-index: 1;
+        top:88%;
+        left: 5%;
+        height: 10%;
+        width: 90%;
+        background-color: red;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .nav li i {
+        font-size: 40px;
+    }
+
+ .footer{
+     grid-area: Footer;
+     height: 200px;
+    }
+.section, .article{
+     height: 700px;
+ }
+ .section{
+     background-color: black;
+ }
+ .article{
+     background-color: white;
+ }
+ .titulo{
+    position: relative;
+    top: 50%;
+    font-size: 30px;
+    color: white;
+ }
+.imagen{
+    opacity: 0.5;
+}
+li{
+    display:inline-block;
+    list-style: none;
+}

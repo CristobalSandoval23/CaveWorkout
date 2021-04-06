@@ -3,8 +3,11 @@
     padding: 0;
     text-align: center;
     font-family: 'Rubik Mono One', sans-serif;
+    text-decoration:none;
  }
-
+:root{
+    --first-color:#252525;
+}
  body {
     display: grid; 
     min-height: 100vh;
@@ -16,6 +19,13 @@
         "Footer Footer Footer "
     ;
  }
+ li{
+    display:inline-block;
+    list-style: none;
+}
+.fas{
+    color: rgb(220, 231, 231);
+}
  .header{
     grid-area: Header;
     height: 100px;
@@ -24,7 +34,6 @@
  .main{
      grid-area: Main;
  }
-
     .nav{
         position: fixed;
         z-index: 1;
@@ -32,7 +41,7 @@
         left: 5%;
         height: 10%;
         width: 90%;
-        background-color: red;
+        background-color: var(--first-color);
         display: flex;
         justify-content: space-evenly;
         align-items: center;
@@ -46,10 +55,11 @@
      height: 200px;
     }
 .section, .article{
-     height: 700px;
+     height: 900px;
  }
  .section{
      background-color: black;
+     color: azure;
  }
  .article{
      background-color: white;
@@ -63,7 +73,43 @@
 .imagen{
     opacity: 0.5;
 }
-li{
-    display:inline-block;
-    list-style: none;
+
+
+.ContenidoServicios{
+    padding: 10px;
+}
+.ServicioEntrenadorPersonal{
+    width: 70%;
+    background-color: var(--first-color);
+}
+.ValorServicio, .CaracteristicasDelServicio{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.ValorServicio span{
+    font-size: 40px;
+}
+.CaracteristicasDelServicio{
+    padding: 30px;
+    font-size: 15px;
+}
+.CaracteristicasDelServicio li{
+    padding: 10px 0px 10px 0px;
+}
+.Agendar{
+    position: relative;
+    background-color: red;
+    border-radius: 5px;
+    width: 70%;
+    height: 40px;
+    align-content: center;
+    justify-content: center;
+    bottom: 20px;
+}
+.TextAgendar{
+    position: relative;
+    color: white;
+    top: 10px;
+
 }

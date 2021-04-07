@@ -36,12 +36,11 @@
  }
 
 .nav{
-    position: fixed;
+    position:fixed;
     z-index: 1;
-    top:88%;
-    left: 5%;
-    height: 10%;
-    width: 90%;
+    top: 88%;
+    margin: 10px;
+    padding: 10px;
     background-color: var(--first-color);
     display: flex;
     justify-content: space-evenly;
@@ -50,6 +49,9 @@
 }
 .nav li i {
     font-size: 40px;
+}
+.nav li a {
+    padding: 0px 15px 0px 15px;
 }
 
  .footer{
@@ -75,7 +77,6 @@
 .imagen{
     opacity: 0.5;
 }
-
 
 .ContenidoServicios{
     padding: 10px;

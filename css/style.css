@@ -8,6 +8,9 @@
     font-family: 'Rubik Mono One', sans-serif;
     text-decoration:none;
  }
+ html{
+     scroll-behavior: smooth;
+ }
 
  body {
     display: grid; 
@@ -55,10 +58,10 @@ h2{
     align-items: center;
     border-radius: 10px;
 }
-.nav li i {
+.nav a {
     font-size: 40px;
 }
-.nav li a {
+.nav a {
     padding: 0px 15px 0px 15px;
 }
 
@@ -85,9 +88,10 @@ h2{
 
 .ContenidoServicios{
     padding: 10px;
+    /* width: 300px; */
 }
 .ServicioEntrenadorPersonal{
-    width: 70%;
+    /* width: 70%; */
     background-color: var(--first-color);
 }
 .ValorServicio, .CaracteristicasDelServicio{
@@ -103,7 +107,8 @@ h2{
     font-size: 15px;
 }
 .CaracteristicasDelServicio li{
-    padding: 10px 0px 10px 0px;
+    padding: 30px;
+    width: 70%;
 }
 .Agendar{
     position: relative;
@@ -111,8 +116,6 @@ h2{
     border-radius: 5px;
     width: 70%;
     height: 40px;
-    align-content: center;
-    justify-content: center;
     bottom: 20px;
 }
 .TextAgendar{
@@ -135,6 +138,32 @@ h2{
     position: relative;
     top: 10px;
 }
+.image{
+ padding: 20px;
+}
+.centrar{
+    position: relative;
+    top: 190px;
+    padding: 0px 30px;
+}
+.image i{
+    font-size: 30px;
+}
+.horizontal_slider{
+    display: block;
+    width: auto;
+    overflow-x: scroll;
+    box-sizing: border-box;
+}
+
+.slide_container{
+    display: flex;
+    max-width: 300px;
+}
+.horizontal_slider::-webkit-scrollbar{
+    display: none;
+}
+
 /*TODO  
     Organizar mejor el CSS a nivel de colores y modelo de caja 
 */

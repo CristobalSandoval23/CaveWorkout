@@ -78,6 +78,13 @@ article{
     height: 100px;
     background-color: white;
  }
+ .logo-container{
+     display: flex;
+     color: black;
+     align-content: center;
+     justify-content: center;
+     align-items: center;
+ }
 /* ********** Main ********** */
 .main{
     grid-area: Main;

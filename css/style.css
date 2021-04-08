@@ -1,15 +1,24 @@
+/* ********** Custom Properties ********** */
 :root{
     --first-color:#252525;
+    --second-color: white;
+    --btn-color:red ;
+    --icon-color:rgb(220, 231, 231);
 }
- *  {
+
+/* ********** Reset ********** */
+html{
+    scroll-behavior: smooth;
+    background-color: black;
+    color: var(--second-color);
+}
+
+ *{
     margin: 0;
     padding: 0;
     text-align: center;
     font-family: 'Rubik Mono One', sans-serif;
     text-decoration:none;
- }
- html{
-     scroll-behavior: smooth;
  }
 
  body {
@@ -23,29 +32,102 @@
         "Footer Footer Footer "
     ;
  }
- li{
+
+a{
+    font-size: 40px;
+ }
+
+div{
+     margin: 0;
+     height: auto;
+ }
+
+li{
     display:inline-block;
     list-style: none;
 }
-div{
-    padding: 10% 20% 10% 20%;
+h1{
+    margin: 0;
+    font-size: 20px;
 }
 h2{
-    padding: 0px 0px 30px 0px;
+    margin: 0;
+    font-size: 15px;
 }
-.fas{
-    color: rgb(220, 231, 231);
+i{
+    font-size: 30px;
 }
- .header{
+img{
+    margin: 0;
+}
+span{
+    margin: 0;
+    font-size: 25px;
+}
+article{
+    display:inline-block;
+}
+/* ********** Components ********** */
+
+/* ********** Header ********** */
+.header{
     grid-area: Header;
     height: 100px;
     background-color: white;
  }
- .main{
-     grid-area: Main;
- }
+/* ********** Main ********** */
+.main{
+    grid-area: Main;
+}
 
-.nav{
+.tracing-presentation{
+    padding: 20px 30px;
+}
+.tracing-video{
+    width: 90%;
+    height: 300px;
+}
+
+.hero-image{
+    position: relative;
+    padding: 20px 0px;
+}
+.hero-image img{
+    opacity: 0.6;
+}
+.hero-image-text{
+    position: absolute;
+    bottom: 50%;
+    right: 15%;
+}
+.hero-image-texts{
+    position: absolute;
+    bottom: 30%;
+}
+
+.service-container{
+    padding: 10px;
+}
+.service-item{
+    background-color: var(--first-color);
+}
+.service-price, .service-features{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.service-features{
+    padding: 30px;
+    font-size: 15px;
+}
+.service-features li{
+    padding: 30px;
+    width: 70%;
+}
+
+/* ********** Menu ********** */
+.menu{
     position:fixed;
     z-index: 1;
     bottom: 0;
@@ -58,100 +140,25 @@ h2{
     align-items: center;
     border-radius: 10px;
 }
-.nav a {
-    font-size: 40px;
-}
-.nav a {
+
+.menu a {
     padding: 0px 15px 0px 15px;
 }
+/* ********** Footer ********** */
+.footer{
+    grid-area: Footer;
+    height: 200px;
+   }
 
- .footer{
-     grid-area: Footer;
-     height: 200px;
-    }
- .section{
-     background-color: black;
-     color: azure;
- }
- .article{
-     background-color: white;
- }
- .titulo{
-    position: relative;
-    top: 200px;
-    font-size: 30px;
-    color: white;
- }
-.imagen{
-    opacity: 0.5;
-}
-
-.ContenidoServicios{
-    padding: 10px;
-    /* width: 300px; */
-}
-.ServicioEntrenadorPersonal{
-    /* width: 70%; */
-    background-color: var(--first-color);
-}
-.ValorServicio, .CaracteristicasDelServicio{
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-}
-.ValorServicio span{
-    font-size: 40px;
-}
-.CaracteristicasDelServicio{
-    padding: 30px;
-    font-size: 15px;
-}
-.CaracteristicasDelServicio li{
-    padding: 30px;
-    width: 70%;
-}
-.Agendar{
-    position: relative;
-    background-color: red;
-    border-radius: 5px;
-    width: 70%;
-    height: 40px;
-    bottom: 20px;
-}
-.TextAgendar{
-    position: relative;
-    color: white;
-    top: 10px;
-
-}
-
-.Presentacion{
-    padding: 0;
-}
-
-.fa-instagram, .fa-twitter, .fa-facebook{
-    font-size: 50px;
-    padding: 20px;
-    color: black;
-}
 .tituloFooter{
     position: relative;
     top: 10px;
 }
-.image{
- padding: 20px;
-}
-.centrar{
-    position: relative;
-    top: 190px;
-    padding: 0px 30px;
-}
-.image i{
-    font-size: 30px;
-}
+
+/* ********** Utilities ********** */
+
 .horizontal_slider{
     display: block;
-    width: auto;
     overflow-x: scroll;
     box-sizing: border-box;
 }
@@ -163,7 +170,28 @@ h2{
 .horizontal_slider::-webkit-scrollbar{
     display: none;
 }
+.btn{
+    position: relative;
+    background-color: var(--btn-color);
+    border-radius: 5px;
+    width: 70%;
+    height: 40px;
+    bottom: 20px;
+}
+.btn_text_center{
+    position: relative;
+    top: 9px;
+    color: white;
+    font-size: 18px;
 
-/*TODO  
-    Organizar mejor el CSS a nivel de colores y modelo de caja 
-*/
+}
+
+ /* ********** Site Styles ********** */
+ .icon_menu{
+    color: var(--icon-color);
+}
+.social_media{
+    font-size: 50px;
+    padding: 20px;
+    color: var(--icon-color);
+}

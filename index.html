@@ -11,34 +11,30 @@
 </head>
 <body>
     <header class="header">Logo</header>
-    <nav class="nav">
-        <a href="#"><i class="fas fa-home" href="#"></i></a>
-        <a href="#Testimonios"><i class="fas fa-dumbbell" href="#"></i></a>
-        <a href="#Contacto"><i class="fas fa-tag"></i></a>
-        <a href="#QuieresEmpezar"><i class="fas fa-phone "></i></a>
+    <nav class="menu">
+        <a href="#"><i class="fas fa-home icon_menu"></i></a>
+        <a href="#Testimonios"><i class="fas fa-dumbbell icon_menu"></i></a>
+        <a href="#Contacto"><i class="fas fa-tag icon_menu"></i></a>
+        <a href="#QuieresEmpezar"><i class="fas fa-phone icon_menu"></i></a>
     </nav>
     <main class="main">  
-        <section class="section" id="EnQueConsiste">
-            <div class="Presentacion">
-                <h1 class="titulo">SEGUIMIENTO</h1>
-                <h1 class="titulo">CAVEWORKOUT</h1>
+        <section id="EnQueConsiste">
+            <article class="hero-image">
+                <img src="https://placeimg.com/270/400/any" alt="Any" > 
+                <div class="hero-image-text">
+                    <h1 >SEGUIMIENTO</h1>
+                    <h1 >CAVEWORKOUT</h1>
+                </div>
 
-             <img src="https://placeimg.com/300/300/any" alt="Any" alt=""> 
-            </div>
+            </article>
              
-             <div>
-                 <h2>EN QUE CONSISTE EL SEGUIMIENTO
-    
-                 </h2>
+             <div class="tracing-presentation">
+                 <h2>EN QUE CONSISTE EL SEGUIMIENTO</h2>
                  <h2> En este vídeo tienes una idea general 
                      de nuestro método de trabajo, no te pierdas 
                      el resto de apartados para más detalles.</h2>
-
              </div>
-
-             <iframe 
-                     width=100% 
-                     height="315" 
+             <iframe class="tracing-video" 
                      src="https://www.youtube.com/embed/OH07DIFRqNs"
                      title="YouTube video player" 
                      frameborder="0" 
@@ -46,21 +42,47 @@
                      allowfullscreen>
                     </iframe>
         </section>
-        <article class="article" id="QueIncluye">Que incluye
-            <div class="image">
-                <!-- <div class="subtitulo"> -->
-                    <i class="centrar fas fa-layer-group"></i>
-                    <h2 class="centrar">Personalizado</h2>
-                    <h3 class="centrar">
+        <section id="QueIncluye">Que incluye
+            <article class="hero-image">
+                <img src="https://placeimg.com/270/400/person" alt="">
+                <div class="hero-image-texts">
+                    <i class="text_center fas fa-layer-group icon_menu"></i>
+                    <h1 class="text_center">Personalizado</h1>
+                    <h2 class="text_center">
                         Sin egos, sin métodos, hacemos el
-                         planning que puedas seguir,
-                         facilitamos el camino y te
-                          ponemos en la dirección correcta.
-                    </h3>
-                <!-- </div> -->
-                <img src="https://placeimg.com/270/300/any" alt="">
-            </div>
-        </article>
+                        planning que puedas seguir,
+                        facilitamos el camino y te
+                        ponemos en la dirección correcta.
+                    </h2>
+                    </div>
+            </article>
+            <article class="hero-image">
+                <img src="https://placeimg.com/270/400/any" alt="">
+                <div class="hero-image-texts">
+                    <i class="text_center fas fa-layer-group icon_menu"></i>
+                    <h1 class="text_center">Personalizado</h1>
+                    <h2 class="text_center">
+                        Sin egos, sin métodos, hacemos el
+                        planning que puedas seguir,
+                        facilitamos el camino y te
+                        ponemos en la dirección correcta.
+                    </h2>
+                    </div>
+            </article>
+            <article class="hero-image">
+                <img src="https://placeimg.com/270/400/person" alt="">
+                <div class="hero-image-texts">
+                    <i class="text_center fas fa-layer-group icon_menu"></i>
+                    <h1 class="text_center">Personalizado</h1>
+                    <h2 class="text_center">
+                        Sin egos, sin métodos, hacemos el
+                        planning que puedas seguir,
+                        facilitamos el camino y te
+                        ponemos en la dirección correcta.
+                    </h2>
+                    </div>
+            </article>
+        </section>
         <section class="section" id="Testimonios">Testimonios o transformaciones</section>
         <article class="article" id="Contacto">¿QUIERES EMPEZAR?
             <h2>
@@ -69,14 +91,14 @@
                 de entrar, estas son las tarifas 
                 y plazas disponibles:
             </h2>
-            <li class="Agendar"><a class="TextAgendar" href="#QuieresEmpezar">Ver las tarifas</a></li>
+            <li class="btn"><a class="btn_text_center" href="#QuieresEmpezar">Ver las tarifas</a></li>
         </article>
-        <section class="section" id="QuieresEmpezar">PRECIOS Y TARIFA DE AHORRO
+        <section id="QuieresEmpezar">PRECIOS Y TARIFA DE AHORRO
            <div class="horizontal_slider">
             <div class="slide_container">
-            <article class="ContenidoServicios item">
-                <ul class="ServicioEntrenadorPersonal">
-                    <li class="ValorServicio">
+            <article class="service-container item">
+                <ul class="service-item">
+                    <li class="service-price">
                         <sup>$</sup>
                         <span>99</span>
                         <h6>Mensual</h2>
@@ -84,19 +106,19 @@
                     <li >
                         <span>Mensual ahorro</span>
                     </li>
-                    <ul class="CaracteristicasDelServicio">
+                    <ul class="service-features">
                         <li>RUTINA Y PLANIFICACIÓN</li>
                         <li>DIETA COMPLETA</li>
                         <li>MATERIAL EXCLUSIVO</li>
                         <li>DUDAS EN 24 HORAS POR ENCARGADO TITULADO</li>
                         <li>REVISIONES SEMANALES Y AJUSTES SIN LÍMITE POR ENCARGADO TITULADO</li>
                     </ul>
-                    <li class="Agendar"><a class="TextAgendar" href="#QuieresEmpezar">Agendarme<i class="fas fas fa-arrow-right"></i></a></li>
+                    <li class="btn"><a class="btn_text_center" href="#QuieresEmpezar">Agendarme</a></li>
                 </ul>
             </article>
-            <article class="ContenidoServicios item">
-                <ul class="ServicioEntrenadorPersonal">
-                    <li class="ValorServicio">
+            <article class="service-container item">
+                <ul class="service-item">
+                    <li class="service-price">
                         <sup>$</sup>
                         <span>99</span>
                         <h6>Mensual</h2>
@@ -104,14 +126,14 @@
                     <li >
                         <span>Mensual ahorro</span>
                     </li>
-                    <ul class="CaracteristicasDelServicio">
+                    <ul class="service-features">
                         <li>RUTINA Y PLANIFICACIÓN</li>
                         <li>DIETA COMPLETA</li>
                         <li>MATERIAL EXCLUSIVO</li>
                         <li>DUDAS EN 24 HORAS POR ENCARGADO TITULADO</li>
                         <li>REVISIONES SEMANALES Y AJUSTES SIN LÍMITE POR ENCARGADO TITULADO</li>
                     </ul>
-                    <li class="Agendar"><a class="TextAgendar" href="#QuieresEmpezar">Agendarme<i class="fas fas fa-arrow-right"></i></a></li>
+                    <li class="btn"><a class="btn_text_center" href="#QuieresEmpezar">Agendarme</a></li>
                 </ul>
             </article>
 
@@ -126,9 +148,9 @@
             Siguenos en nuestras redes sociales
         </span>  
         <ul>
-            <li><a href="https://www.instagram.com/caveworkout/"><i class=" fab fa-instagram"></i></a></li>
-            <li><a href="https://www.twitter.com/caveworkout/"><i class=" fab fa-twitter"></i></a></li>
-            <li><a href="https://www.facebook.com/caveworkout/"><i class=" fab fa-facebook"></i></a></li>
+            <li><a href="https://www.instagram.com/caveworkout/"><i class=" fab fa-instagram social_media"></i></a></li>
+            <li><a href="https://www.twitter.com/caveworkout/"><i class=" fab fa-twitter social_media"></i></a></li>
+            <li><a href="https://www.facebook.com/caveworkout/"><i class=" fab fa-facebook social_media"></i></a></li>
         </ul>
     </footer>
 </body>

@@ -2,8 +2,11 @@
 :root{
     --first-color:#252525;
     --second-color: white;
-    --btn-color:red ;
+    --third-color: #2f2f2f;
+    --btn-color:rgb(167, 36, 36) ;
     --icon-color:rgb(220, 231, 231);
+    --font-family-primary: 'Rubik Mono One', sans-serif;
+    --font-family-second: cursive;
 }
 
 /* ********** Reset ********** */
@@ -17,7 +20,7 @@ html{
     margin: 0;
     padding: 0;
     text-align: center;
-    font-family: 'Rubik Mono One', sans-serif;
+    font-family: var(--font-family-primary);
     text-decoration:none;
  }
 
@@ -39,7 +42,6 @@ a{
 
 div{
      margin: 0;
-     height: auto;
  }
 
 li{
@@ -59,6 +61,7 @@ i{
 }
 img{
     margin: 0;
+    border-radius: 15px;
 }
 span{
     margin: 0;
@@ -66,24 +69,23 @@ span{
 }
 p{
     margin: 0;
-}
-article{
-    display:inline-block;
+    font-family: var(--font-family-second);
+    padding: 10px;
 }
 /* ********** Components ********** */
 
 /* ********** Header ********** */
 .header{
     grid-area: Header;
-    height: 100px;
     background-color: white;
  }
  .logo-container{
      display: flex;
      color: black;
      align-content: center;
-     justify-content: center;
+     justify-content:space-evenly;
      align-items: center;
+     padding: 10px 0px;
  }
 /* ********** Main ********** */
 .main{
@@ -101,6 +103,7 @@ article{
 .hero-image{
     position: relative;
     padding: 20px 0px;
+    display: inline-block;
 }
 .hero-image img{
     opacity: 0.6;
@@ -114,7 +117,9 @@ article{
     position: absolute;
     bottom: 30%;
 }
-
+.ready-container{
+    padding: 0px 10px;
+}
 .service-container{
     padding: 10px;
 }
@@ -128,7 +133,7 @@ article{
 }
 
 .service-features{
-    padding: 0px 30px;
+    padding: 0px 35px 30px 35px;
     font-size: 15px;
 
 }
@@ -146,6 +151,10 @@ div figure{
 }
 .container-text-trasform{
     padding: 0px 20px;
+}
+
+.contact-container{
+    padding: 10px 30px;
 }
 
 /* ********** Menu ********** */
@@ -169,7 +178,7 @@ div figure{
 /* ********** Footer ********** */
 .footer{
     grid-area: Footer;
-    height: 200px;
+    background-color: var(--btn-color);
    }
 
 .tituloFooter{
@@ -196,9 +205,10 @@ div figure{
     position: relative;
     background-color: var(--btn-color);
     border-radius: 5px;
-    width: 70%;
+    width: auto;
     height: 40px;
     bottom: 20px;
+    padding: 0px 10px;
 }
 .btn_text_center{
     position: relative;
@@ -209,6 +219,9 @@ div figure{
 }
 
  /* ********** Site Styles ********** */
+ .includes, .star{
+     background-color: var(--third-color);
+ }
  .icon_menu{
     color: var(--icon-color);
 }

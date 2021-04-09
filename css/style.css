@@ -56,6 +56,10 @@ h2{
     margin: 0;
     font-size: 15px;
 }
+h3{
+    margin: 0;
+    font-size: 15px;
+}
 i{
     font-size: 30px;
 }
@@ -225,8 +229,18 @@ div figure{
  .icon_menu{
     color: var(--icon-color);
 }
+.icon_email{
+    padding: 30px  0px 15px 0px;
+    font-size: 50px;
+    color: var(--icon-color);
+}
 .social_media{
     font-size: 50px;
     padding: 20px;
     color: var(--icon-color);
+}
+.container-email{
+    display: flex;
+    flex-direction: column;
+    color: white;
 }

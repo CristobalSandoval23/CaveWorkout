@@ -16,14 +16,14 @@
             <h1>CaveWorkout</h1>
         </div>
     </header>
-    <nav class="menu">
-        <a href="#"><i class="fas fa-home icon_menu"></i></a>
-        <a href="#Testimonios"><i class="fas fa-dumbbell icon_menu"></i></a>
-        <a href="#Precios-Tarifas"><i class="fas fa-tag icon_menu"></i></a>
-        <a href="#Contacto"><i class="fas fa-phone icon_menu"></i></a>
+    <nav class="Nav menu">
+        <a href="#"><i class="fas fa-home icon_menu"></i><h2>Seguimiento</h2></a>
+        <a href="#Testimonios"><i class="fas fa-dumbbell icon_menu"></i><h2>Testimonios</h2></a>
+        <a href="#Precios-Tarifas"><i class="fas fa-tag icon_menu"></i><h2>Precios</h2></a>
+        <a href="#Contacto"><i class="fas fa-phone icon_menu"></i><h2>Contacto</h2></a>
     </nav>
     <main class="main">  
-        <section id="EnQueConsiste">
+        <section class="prueba" id="EnQueConsiste">
             <article class="hero-image">
                 <img src="https://placeimg.com/270/400/any" alt="Any" > 
                 <div class="hero-image-text">
@@ -31,22 +31,25 @@
                     <h1 >CAVEWORKOUT</h1>
                 </div>
             </article>
-             
-             <div class="tracing-presentation">
-                 <h2>EN QUE CONSISTE EL SEGUIMIENTO</h2>
-                 <br>
-                 <p> En este vídeo tienes una idea general 
-                     de nuestro método de trabajo, no te pierdas 
-                     el resto de apartados para más detalles.</p>
-             </div>
-             <iframe class="tracing-video" 
-                     src="https://www.youtube.com/embed/OH07DIFRqNs"
-                     title="YouTube video player" 
-                     frameborder="0" 
-                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                     allowfullscreen>
-                    </iframe>
-                    <li class="btn"><a class="btn_text_center" href="mailto:contacto.caveworkout@gmail.com?subject=Servicios de entrenamiento personal">Contactar</a></li>
+            <div class="container-present-video">
+                <div class="tracing-presentation">
+                    <h2>EN QUE CONSISTE EL SEGUIMIENTO</h2>
+                    <br>
+                    <p> En este vídeo tienes una idea general 
+                        de nuestro método de trabajo, no te pierdas 
+                        el resto de apartados para más detalles.</p>
+                </div>
+                <iframe class="tracing-video" 
+                        src="https://www.youtube.com/embed/OH07DIFRqNs"
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                       </iframe>
+            </div>
+            <br>
+            <br>
+            <li class="btn"><a class="btn_text_center" href="mailto:contacto.caveworkout@gmail.com?subject=Servicios de entrenamiento personal">Contactar</a></li>
         </section>
         <section class="includes" id="QueIncluye">
             <br>
@@ -216,22 +219,45 @@
                     <li class="btn"><a class="btn_text_center" href="mailto:contacto.caveworkout@gmail.com?subject=Servicios de entrenamiento personal">Agendarme</a></li>
                 </ul>
             </article>
+            <article class="service-container item">
+                <ul class="service-item">
+                    <li class="service-price">
+                        <sup>$</sup>
+                        <span>99</span>
+                        <h6>Mensual</h2>
+                    </li>
+                    <li >
+                        <span>Mensual ahorro</span>
+                    </li>
+                    <ul class="service-features">
+                        <p>RUTINA Y PLANIFICACIÓN</p>
+                        <p>DIETA COMPLETA</p>
+                        <p>MATERIAL EXCLUSIVO</p>
+                        <p>DUDAS EN 24 HORAS POR ENCARGADO TITULADO</p>
+                        <p>REVISIONES SEMANALES Y AJUSTES SIN LÍMITE POR ENCARGADO TITULADO</p>
+                    </ul>
+                    <li class="btn"><a class="btn_text_center" href="mailto:contacto.caveworkout@gmail.com?subject=Servicios de entrenamiento personal">Agendarme</a></li>
+                </ul>
+            </article>
            </div>
            </div>
         </section>
         <section id="Contacto">
             <article>
                 <div class="contact-container">
-                    <h1>CONTACTAR</h1>
-                    <br>
-                    <p>
-                        Somos los primeros que queremos que entres decidido/a al 
-                        seguimiento, si tienes cualquier duda, necesitas 
-                        alguna facilidad con el pago o necesitas que te 
-                        precisemos algún aspecto del seguimiento deja tu pregunta 
-                        aquí, yo mismo te la contestaré a tu correo a la mayor 
-                        brevedad posible.
-                    </p>
+                    <div class="contact-container-text">
+                        <h1>CONTACTAR</h1>
+                        <br>
+                        <p>
+                            Somos los primeros que queremos que entres decidido/a al 
+                            seguimiento, si tienes cualquier duda, necesitas 
+                            alguna facilidad con el pago o necesitas que te 
+                            precisemos algún aspecto del seguimiento deja tu pregunta 
+                            aquí, yo mismo te la contestaré a tu correo a la mayor 
+                            brevedad posible.
+                        </p>
+
+                    </div>
                         <a class="container-email" href="mailto:contacto.caveworkout@gmail.com?subject=Dudas (agregar el tipo de duda)">
                             <i class="fas fa-envelope-open-text icon_email"></i>
                             <h3>Enviame un correo</h3>
@@ -245,7 +271,7 @@
             Siguenos en nuestras redes sociales
         </span>  
         <br><br>
-        <ul>
+        <ul class="container-red-social">
             <li><a href="https://www.instagram.com/caveworkout/"><i class=" fab fa-instagram social_media"></i></a></li>
             <li><a href="https://www.twitter.com/caveworkout/"><i class=" fab fa-twitter social_media"></i></a></li>
             <li><a href="https://www.facebook.com/caveworkout/"><i class=" fab fa-facebook social_media"></i></a></li>

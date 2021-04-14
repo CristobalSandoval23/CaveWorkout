@@ -3,16 +3,18 @@
     --first-color:#252525;
     --second-color: white;
     --third-color: #2f2f2f;
+    --background-color: black;
     --btn-color:rgb(167, 36, 36) ;
     --icon-color:rgb(220, 231, 231);
     --font-family-primary: 'Rubik Mono One', sans-serif;
-    --font-family-second: cursive;
+    --font-family-second: Georgia, 'Times New Roman', Times, serif;
+    --header-height: 0;
 }
 
 /* ********** Reset ********** */
 html{
     scroll-behavior: smooth;
-    background-color: black;
+    background-color: var(--background-color);
     color: var(--second-color);
 }
 
@@ -22,18 +24,6 @@ html{
     text-align: center;
     font-family: var(--font-family-primary);
     text-decoration:none;
- }
-
- body {
-    display: grid; 
-    min-height: 100vh;
-    grid-template-columns: repeat(3,auto);
-    grid-template-rows: repeat(3, auto);
-    grid-template-areas: 
-        "Header Header Header "
-        "Main   Main   Main   "
-        "Footer Footer Footer "
-    ;
  }
 
 a{
@@ -78,10 +68,38 @@ p{
 }
 /* ********** Components ********** */
 
+body {
+    display: grid; 
+    min-height: 100vh;
+    grid-template-columns: repeat(3,auto);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: 
+        "Header Header Header "
+        "Main   Main   Main   "
+        "Footer Footer Footer "
+    ;
+ }
+
+ @media screen and (min-width: 700px){
+
+    body {
+        display: grid; 
+        min-height: 100vh;
+        grid-template-columns: repeat(3,auto);
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: 
+            "Header    Nav    Nav "
+            "Main   Main   Main   "
+            "Footer Footer Footer "
+        ;
+     }    
+     
+ }
+
 /* ********** Header ********** */
 .header{
     grid-area: Header;
-    background-color: white;
+    background-color: var(--second-color);
  }
  .logo-container{
      display: flex;
@@ -90,6 +108,19 @@ p{
      justify-content:space-evenly;
      align-items: center;
      padding: 10px 0px;
+ }
+ @media screen and (min-width: 700px){
+    .header{
+        background-color: var(--background-color);
+     }
+    .logo-container{
+        display: block;
+        color: var(--second-color);
+        padding: 10px 0px;
+    }
+    .logo{
+        border-radius: 70px;
+    }
  }
 /* ********** Main ********** */
 .main{
@@ -161,11 +192,45 @@ div figure{
     padding: 10px 30px;
 }
 
+@media screen and (min-width: 700px){
+
+    .container-present-video{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .tracing-presentation{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+    .tracing-video{
+        width: 30%;
+        height: 300px;
+    }
+
+    .contact-container{
+        display: flex;
+        justify-content: space-evenly;
+        padding: 30px 0px;
+    }
+    .contact-container-text{
+        max-width: 400px;
+    }
+    .footer{
+        display: flex;
+        justify-content:space-around;
+    }
+    .container-red-social{
+        display: flex;
+    }
+ }
+
 /* ********** Menu ********** */
 .menu{
     position:fixed;
     z-index: 1;
-    bottom: 0;
+    bottom: var(--header-height);
     width: 89%;
     margin: 10px 10px 10px 10px;
     padding: 10px;
@@ -179,6 +244,39 @@ div figure{
 .menu a {
     padding: 0px 15px 0px 15px;
 }
+.menu a h2{
+    display: none;
+}
+
+.menu a i:hover{
+    opacity: 0.5;
+}
+@media screen and (min-width: 700px){
+
+     .menu{
+        grid-area: Nav;
+        position:static;
+        margin: 10px 10px 10px 10px;
+        padding: 10px;
+        background-color: var(--background-color);
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .menu a i{
+        display: none;
+    }
+    .menu a h2{
+        display: block;
+        font-size: 20px;
+        color: var(--second-color);
+    }
+
+    .menu a h2:hover{
+        opacity: 0.5;
+    }
+     
+ }
 /* ********** Footer ********** */
 .footer{
     grid-area: Footer;
@@ -200,8 +298,36 @@ div figure{
 
 .slide_container{
     display: flex;
-    max-width: 300px;
 }
+
+@media (min-width: 300px) and (max-width: 800px) {
+    .slide_container{
+        max-width: 300px;
+    }
+
+}
+@media (min-width: 801px) and (max-width: 1000px) {
+    .slide_container{
+        max-width: 800px;
+    }
+    .menu a h2{
+        display: block;
+        font-size: 15px;
+        color: var(--second-color);
+    }
+
+}
+@media (min-width: 1001px) and (max-width: 1400px) {
+
+    .menu a h2{
+        display: block;
+        font-size: 20px;
+        color: var(--second-color);
+    }
+
+}
+
+
 .horizontal_slider::-webkit-scrollbar{
     display: none;
 }

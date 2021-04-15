@@ -21,7 +21,6 @@ html{
     background-color: var(--background-color);
     color: var(--second-color);
 }
-
  *{
     margin: 0;
     padding: 0;
@@ -30,8 +29,6 @@ html{
     text-decoration:none;
     font-stretch:ultra-expanded;
  }
-
-
 li{
     display:inline-block;
     list-style: none;
@@ -303,9 +300,7 @@ div figure{
 /* ********** Utilities ********** */
 
 .horizontal_slider{
-    /* display: block; */
     overflow-x: scroll;
-    /* box-sizing: border-box; */
 }
 
 .slide_container{
@@ -316,6 +311,11 @@ div figure{
     .slide_container{
         max-width: 300px;
     }
+    .footer{
+            display: flex;
+        flex-direction:column-reverse;
+       }
+
 
 }
 @media screen and (min-width: 500px) {
@@ -327,6 +327,9 @@ div figure{
 @media screen and (min-width: 700px) {
     .slide_container{
         max-width: 500px;
+    }
+    .footer h1{
+        display: none;
     }
 
 }

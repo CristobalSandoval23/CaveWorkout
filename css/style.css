@@ -6,9 +6,10 @@
     --background-color: black;
     --btn-color:rgb(167, 36, 36) ;
     --icon-color:rgb(220, 231, 231);
-    --font-family-primary: 'Rubik Mono One', sans-serif;
-    --font-family-second: Georgia, 'Times New Roman', Times, serif;
+    --font-family-primary: 'Staatliches', cursive;
+    --font-family-second:  'Archivo Black', sans-serif;
     --header-height: 0;
+    --font-size: 20px;
 }
 
 /* ********** Reset ********** */
@@ -24,6 +25,8 @@ html{
     text-align: center;
     font-family: var(--font-family-primary);
     text-decoration:none;
+    font-stretch:ultra-expanded;
+    letter-spacing: 2.5px;
  }
 
 a{
@@ -44,14 +47,14 @@ h1{
 }
 h2{
     margin: 0;
-    font-size: 15px;
+    font-size: var(--font-size);
 }
 h3{
     margin: 0;
-    font-size: 15px;
+    font-size: var(--font-size);
 }
 i{
-    font-size: 30px;
+    font-size: var(--font-size);
 }
 img{
     margin: 0;
@@ -59,7 +62,7 @@ img{
 }
 span{
     margin: 0;
-    font-size: 25px;
+    font-size: var(--font-size);
 }
 p{
     margin: 0;
@@ -370,3 +373,5 @@ div figure{
     flex-direction: column;
     color: white;
 }
+
+/*TODO organizar mejor los @media

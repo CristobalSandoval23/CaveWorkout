@@ -31,9 +31,6 @@ html{
     font-stretch:ultra-expanded;
  }
 
-div{
-     margin: 0;
- }
 
 li{
     display:inline-block;
@@ -134,7 +131,12 @@ body {
 .main{
     grid-area: Main;
 }
-.tracing-presentation,.container-text-trasform, .ready-container, .container-trasform{
+.tracing-presentation,
+.consists,
+.horizontal_slider,
+.container-text-trasform, 
+.ready-container, 
+.container-trasform{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -225,7 +227,9 @@ div figure{
     
     .footer{
         display: flex;
-        justify-content:space-around;
+        justify-content:space-between;
+        align-items: center;
+        padding: 0px 30px;
     }
     .container-red-social{
         display: flex;
@@ -297,7 +301,6 @@ div figure{
 /* ********** Utilities ********** */
 
 .horizontal_slider{
-    display: block;
     overflow-x: scroll;
     box-sizing: border-box;
 }
@@ -306,13 +309,13 @@ div figure{
     display: flex;
 }
 
-@media (min-width: 300px) and (max-width: 800px) {
+@media screen and (min-width: 300px) {
     .slide_container{
         max-width: 300px;
     }
 
 }
-@media (min-width: 801px) and (max-width: 1000px) {
+@media screen and (min-width: 800px) {
     .slide_container{
         max-width: 800px;
     }
@@ -323,8 +326,10 @@ div figure{
     }
 
 }
-@media (min-width: 1001px) and (max-width: 1400px) {
-
+@media screen and (min-width: 1400px) {
+    .slide_container{
+        max-width: 1400px;
+    }
     .menu a h2{
         display: block;
         font-size: 20px;
@@ -332,7 +337,6 @@ div figure{
     }
 
 }
-
 
 .horizontal_slider::-webkit-scrollbar{
     display: none;

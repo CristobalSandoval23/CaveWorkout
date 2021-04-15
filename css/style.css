@@ -7,9 +7,12 @@
     --btn-color:rgb(167, 36, 36) ;
     --icon-color:rgb(220, 231, 231);
     --font-family-primary: 'Staatliches', cursive;
-    --font-family-second:  'Archivo Black', sans-serif;
+    --font-family-second:Arial, Helvetica, sans-serif;
     --header-height: 0;
-    --font-size: 20px;
+    --font-size-icon: 40px;
+    --letter-spacing-primary: 2.5px;
+    --letter-spacing-second: 1px;
+    --text-align-title:center;
 }
 
 /* ********** Reset ********** */
@@ -22,15 +25,10 @@ html{
  *{
     margin: 0;
     padding: 0;
-    text-align: center;
+    text-align: var(--text-align-title);
     font-family: var(--font-family-primary);
     text-decoration:none;
     font-stretch:ultra-expanded;
-    letter-spacing: 2.5px;
- }
-
-a{
-    font-size: 40px;
  }
 
 div{
@@ -44,17 +42,20 @@ li{
 h1{
     margin: 0;
     font-size: 20px;
+    letter-spacing: var(--letter-spacing-primary);
 }
 h2{
     margin: 0;
     font-size: var(--font-size);
+    letter-spacing: var(--letter-spacing-primary);
 }
 h3{
     margin: 0;
     font-size: var(--font-size);
+    letter-spacing: var(--letter-spacing-primary);
 }
 i{
-    font-size: var(--font-size);
+    font-size: var(--font-size-icon);
 }
 img{
     margin: 0;
@@ -63,12 +64,16 @@ img{
 span{
     margin: 0;
     font-size: var(--font-size);
+    letter-spacing: var(--letter-spacing-second);
 }
 p{
     margin: 0;
     font-family: var(--font-family-second);
     padding: 10px;
+    letter-spacing: var(--letter-spacing-second);
+    max-width: 900px;
 }
+
 /* ********** Components ********** */
 
 body {
@@ -129,7 +134,12 @@ body {
 .main{
     grid-area: Main;
 }
-
+.tracing-presentation,.container-text-trasform, .ready-container, .container-trasform{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .tracing-presentation{
     padding: 20px 30px;
 }
@@ -140,7 +150,7 @@ body {
 
 .hero-image{
     position: relative;
-    padding: 20px 0px;
+    padding: 20px;
     display: inline-block;
 }
 .hero-image img{
@@ -149,11 +159,13 @@ body {
 .hero-image-text{
     position: absolute;
     bottom: 50%;
-    right: 15%;
+    left: 30%;
 }
 .hero-image-texts{
     position: absolute;
     bottom: 30%;
+    right: 1%;
+    padding: 0px 20px;
 }
 .ready-container{
     padding: 0px 10px;
@@ -182,7 +194,6 @@ body {
 div figure{
     min-width: 360px;
 }
-
 .menuTransfom{
     font-size: 25px;
     color: white;
@@ -195,31 +206,23 @@ div figure{
     padding: 10px 30px;
 }
 
+
 @media screen and (min-width: 700px){
 
     .container-present-video{
         display: flex;
         justify-content: space-evenly;
     }
-    .tracing-presentation{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        
-    }
     .tracing-video{
         width: 30%;
         height: 300px;
     }
-
     .contact-container{
         display: flex;
         justify-content: space-evenly;
         padding: 30px 0px;
-    }
-    .contact-container-text{
-        max-width: 400px;
-    }
+    } 
+    
     .footer{
         display: flex;
         justify-content:space-around;
@@ -352,6 +355,9 @@ div figure{
 }
 
  /* ********** Site Styles ********** */
+ .max-with{
+     max-width: 600px;
+ }
  .includes, .star{
      background-color: var(--third-color);
  }
@@ -360,11 +366,11 @@ div figure{
 }
 .icon_email{
     padding: 30px  0px 15px 0px;
-    font-size: 50px;
+    font-size: var(--font-size-icon);
     color: var(--icon-color);
 }
 .social_media{
-    font-size: 50px;
+    font-size: var(--font-size-icon);
     padding: 20px;
     color: var(--icon-color);
 }

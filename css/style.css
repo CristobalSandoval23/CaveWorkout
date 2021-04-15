@@ -133,6 +133,7 @@ body {
 }
 .tracing-presentation,
 .consists,
+.container-service,
 .horizontal_slider,
 .container-text-trasform, 
 .ready-container, 
@@ -209,16 +210,13 @@ div figure{
 }
 
 
-@media screen and (min-width: 700px){
+@media screen and (min-width: 800px){
 
     .container-present-video{
         display: flex;
         justify-content: space-evenly;
     }
-    .tracing-video{
-        width: 30%;
-        height: 300px;
-    }
+
     .contact-container{
         display: flex;
         justify-content: space-evenly;
@@ -233,6 +231,11 @@ div figure{
     }
     .container-red-social{
         display: flex;
+    }
+    .menu a h2{
+        display: block;
+        font-size: 15px;
+        color: var(--second-color);
     }
  }
 
@@ -262,7 +265,6 @@ div figure{
     opacity: 0.5;
 }
 @media screen and (min-width: 700px){
-
      .menu{
         grid-area: Nav;
         position:static;
@@ -301,8 +303,9 @@ div figure{
 /* ********** Utilities ********** */
 
 .horizontal_slider{
+    /* display: block; */
     overflow-x: scroll;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 
 .slide_container{
@@ -315,17 +318,31 @@ div figure{
     }
 
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 500px) {
     .slide_container{
-        max-width: 800px;
-    }
-    .menu a h2{
-        display: block;
-        font-size: 15px;
-        color: var(--second-color);
+        max-width: 400px;
     }
 
 }
+@media screen and (min-width: 700px) {
+    .slide_container{
+        max-width: 500px;
+    }
+
+}
+@media screen and (min-width: 900px) {
+    .slide_container{
+        max-width: 700px;
+    }
+
+}
+@media screen and (min-width: 1000px) {
+    .slide_container{
+        max-width: 900px;
+    }
+
+}
+
 @media screen and (min-width: 1400px) {
     .slide_container{
         max-width: 1400px;
@@ -335,7 +352,6 @@ div figure{
         font-size: 20px;
         color: var(--second-color);
     }
-
 }
 
 .horizontal_slider::-webkit-scrollbar{
@@ -359,9 +375,6 @@ div figure{
 }
 
  /* ********** Site Styles ********** */
- .max-with{
-     max-width: 600px;
- }
  .includes, .star{
      background-color: var(--third-color);
  }

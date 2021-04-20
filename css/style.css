@@ -133,6 +133,7 @@ body {
 }
 
 .about-us,
+.container-about-us-reverse,
 .tracing-presentation,
 .consists,
 .container-service,
@@ -156,6 +157,7 @@ body {
     align-content: center;
     align-items: center;
 }
+
 .tracing-presentation{
     padding: 20px 30px;
 }
@@ -227,6 +229,9 @@ div figure{
 @media screen and (min-width: 800px){
     .container-about-us{
         flex-direction: row;
+    }
+    .container-about-us-reverse{
+        flex-direction: row-reverse;
     }
     .container-present-video{
         display: flex;

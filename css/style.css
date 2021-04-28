@@ -188,6 +188,12 @@ body {
 .image-transform{
     width: 70%;
 }
+.img-fundadores{
+    width: 350px;
+    /* height: 270px; */
+    background-size:cover;
+    border-radius: 30px;
+}
 .ready-container{
     padding: 0px 10px;
 }

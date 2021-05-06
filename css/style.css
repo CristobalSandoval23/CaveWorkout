@@ -220,6 +220,55 @@ body {
 div figure{
     min-width: 360px;
 }
+.container-accordion{
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+}
+.accordion{
+    width: 90%;
+    padding: 10px 20px;
+}
+.accordion .contentBx{
+    position: relative;
+    margin: 10px 0px;
+}
+.accordion .contentBx .label{
+    position: relative;
+    padding: 10px 10px 10px 45%;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--first-color);
+    color: azure;
+    cursor: pointer;
+    border-top-left-radius: 15px;
+}
+
+.icon-rest, .icon-add{
+    color: white;
+    font-size: 20px;
+}
+
+.label .icon-rest{
+    display: none;
+}
+.accordion .contentBx .content{
+    height: 0;
+    position: relative;
+    background-color: azure;
+    color: black;
+    overflow: hidden;
+    transition: 0.8s;
+    overflow-y: auto;
+}
+
+.accordion .contentBx.active .content{
+    height: auto;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    
+}
 .menuTransfom{
     font-size: 25px;
     color: white;
@@ -250,6 +299,9 @@ div figure{
         align-items: center;
         padding: 30px 0px;
     } 
+    .accordion{
+        width: 70%;
+    }
     .footer{
         display: flex;
         justify-content:space-between;
@@ -563,48 +615,6 @@ div figure{
       transform: translateY(0%);
     }
 }
-.container-accordion{
-    background-color: var(--background-color);
-}
-.accordion{
-    min-width: 300px;
-    padding: 10px 20px;
-}
-.accordion .contentBx{
-    position: relative;
-    margin: 10px 0px;
-}
-.accordion .contentBx .label{
-    position: relative;
-    padding: 10px 10px 10px 45%;
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--first-color);
-    color: azure;
-    cursor: pointer;
-}
 
-.icon-rest, .icon-add{
-    color: white;
-    font-size: 20px;
-}
-
-.label .icon-rest{
-    display: none;
-}
-.accordion .contentBx .content{
-    position: relative;
-    background-color: azure;
-    color: black;
-    height: 0;
-    overflow: hidden;
-    transition: 0.8s;
-    overflow-y: auto;
-}
-
-.accordion .contentBx.active .content{
-    height: auto;
-    padding: 10px;
-}
 
 /*TODO organizar mejor los @media

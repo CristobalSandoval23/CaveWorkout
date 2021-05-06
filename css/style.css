@@ -226,6 +226,7 @@ div figure{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px 0px 0px 0px;
 }
 .accordion{
     width: 90%;

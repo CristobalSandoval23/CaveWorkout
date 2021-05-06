@@ -563,28 +563,34 @@ div figure{
       transform: translateY(0%);
     }
 }
-
+.container-accordion{
+    background-color: var(--background-color);
+}
 .accordion{
-    min-width: 600px;
+    min-width: 300px;
+    padding: 10px 20px;
 }
 .accordion .contentBx{
     position: relative;
-    margin: 10px 20px;
+    margin: 10px 0px;
 }
 .accordion .contentBx .label{
     position: relative;
-    padding: 10px;
-    background-color: aqua;
+    padding: 10px 10px 10px 45%;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--first-color);
     color: azure;
     cursor: pointer;
 }
-.accordion .contentBx .label::before{
-    content: '+';
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    font-size: 1.5em;
+
+.icon-rest, .icon-add{
+    color: white;
+    font-size: 20px;
+}
+
+.label .icon-rest{
+    display: none;
 }
 .accordion .contentBx .content{
     position: relative;
@@ -592,12 +598,12 @@ div figure{
     color: black;
     height: 0;
     overflow: hidden;
-    transition: 0.5s;
+    transition: 0.8s;
     overflow-y: auto;
 }
 
 .accordion .contentBx.active .content{
-    height: 150px;
+    height: auto;
     padding: 10px;
 }
 

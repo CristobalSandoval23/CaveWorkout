@@ -72,7 +72,6 @@ p{
 
 body {
     display: grid; 
-    min-height: 100vh;
     grid-template-columns: repeat(3,auto);
     grid-template-rows: repeat(3, auto);
     grid-template-areas: 
@@ -86,9 +85,8 @@ body {
 
     body {
         display: grid; 
-        min-height: 100vh;
         grid-template-columns: repeat(3,auto);
-        grid-template-rows: repeat(4, auto);
+        grid-template-rows: repeat(3, auto);
         grid-template-areas: 
             "Header    Nav    Nav "
             "Main   Main   Main   "

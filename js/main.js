@@ -2,7 +2,12 @@
     const $accordion = d.getElementsByClassName('contentBx'),
           $icon_rest = d.getElementsByClassName('icon-rest'),
           $icon_add = d.getElementsByClassName('icon-add');
-      const $close = [true,true,true];
+      const $close = [];
+
+      for (let i = 0; i < $accordion.length; i++) {
+        verdadero = true;
+        $close.push(verdadero);
+      }
 
       for (let i = 0; i < $accordion.length; i++) {
         $accordion[i].addEventListener('click', function(){
@@ -13,7 +18,6 @@
             $icon_add[i].style.display = 'none';
             $icon_add[i].style.transition = '1s';
             $close[i] = false;
-            console.log($close)
         }else{
           $icon_rest[i].style.display = 'none';
           $icon_rest[i].style.transition = '1s';

@@ -228,7 +228,6 @@ div figure{
     justify-content: space-between;
     background-color: var(--first-color);
     color: azure;
-    cursor: pointer;
     border-top-left-radius: 15px;
     letter-spacing: var(--letter-spacing-primary);
 }
@@ -248,7 +247,6 @@ div figure{
     color: var(--second-color);
     overflow: hidden;
     transition: 0.5s;
-    overflow-y: auto;
 }
 
 .accordion .contentBx.active .content{
@@ -256,7 +254,7 @@ div figure{
     display: flex;
     justify-content: center;
     padding: 10px;
-    
+
 }
 .menuTransfom{
     font-size: 25px;

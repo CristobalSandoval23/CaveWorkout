@@ -80,21 +80,6 @@ body {
     ;
  }
 
- @media screen and (min-width: 700px){
-
-    body {
-        display: grid; 
-        grid-template-columns: repeat(3,auto);
-        grid-template-rows: repeat(3, auto);
-        grid-template-areas: 
-            "Header    Nav    Nav "
-            "Main   Main   Main   "
-            "Footer Footer Footer "
-        ;
-     }    
-     
- }
-
 /* ********** Header ********** */
 .header{
     grid-area: Header;

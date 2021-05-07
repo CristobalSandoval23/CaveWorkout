@@ -244,8 +244,8 @@ div figure{
 .accordion .contentBx .content{
     height: 0;
     position: relative;
-    background-color: azure;
-    color: black;
+    background-color: var(--background-color);
+    color: var(--second-color);
     overflow: hidden;
     transition: 0.5s;
     overflow-y: auto;

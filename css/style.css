@@ -251,8 +251,6 @@ div figure{
 
 .accordion .contentBx.active .content{
     height: auto;
-    display: flex;
-    justify-content: center;
     padding: 10px;
 
 }
@@ -402,9 +400,6 @@ div figure{
     display: none;
 }
 
-.menu a i{
-    animation: rebote 1s alternate infinite;
-}
 .menu a i:hover{
     opacity: 0.5;
 }
@@ -609,5 +604,16 @@ div figure{
     }
 }
 
-
+.container-bar{
+    position: fixed;
+    z-index: 20;
+    height: 5px;
+    width: 100%;
+    background-color: white;
+}
+.bar{
+    background-color: red;
+    width: 0%;
+    height: 5px;
+}
 /*TODO organizar mejor los @media

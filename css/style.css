@@ -404,6 +404,9 @@ div figure{
     display: none;
 }
 
+.menu a i{
+    animation: rebote 1s alternate infinite;
+}
 .menu a i:hover{
     opacity: 0.5;
 }

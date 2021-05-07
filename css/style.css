@@ -157,6 +157,9 @@ body {
 .tracing-presentation{
     padding: 20px 30px;
 }
+.tracing-description-text{
+    max-width: 900px;
+}
 .tracing-video, .video-help{
     width: 90%;
     height: 300px;

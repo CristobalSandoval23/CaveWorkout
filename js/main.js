@@ -13,23 +13,24 @@
           $ac_cookie2 = document.querySelector('#aceptar_modal');
 
           
-        localStorage.cookies1 == 'true'? $cont_cookies.style.bottom = '-200px':"";
-        
-        function aceptarCookies() {
-            localStorage.cookies1 = 'true'
-            $cont_cookies.style.bottom = '-200px'
-        
-            let expire = new Date()
-            expire = new Date(expire.getTime() + 776000000)
-            document.cookies = 'cookies1=aceptada; expire='+expire
+        document.cookie == 'name=Kyle; ver_cookies=ok'? $cont_cookies.style.bottom = '-300px':"";
+        // console.log(document.cookie)
+        function aceptarCookies(name, price, expireDays) {
+            $cont_cookies.style.bottom = '-300px'
+            let today = new Date()
+            let expireDay = new Date(today.getTime() + (expireDays*24*60*60*1000));
+            // console.log(today, expireDay)
+            let expireDate = "expires=" + expireDay.toUTCString();
+            // console.log(expireDate)
+            document.cookie = name +'='+ price + ';' + expireDate;
         }
         
         $ac_cookie.addEventListener('click', () => {
-            aceptarCookies();
+            aceptarCookies("ver_cookies", "ok", 3);
         })
         
         $ac_cookie2.addEventListener('click', () => {
-            aceptarCookies();
+            aceptarCookies("ver_cookies", "ok", 3);
             $modal.style.visibility = 'hidden'
             $modal.style.opacity = '0'
         })
@@ -97,7 +98,9 @@
           // console.log( window.scrollY,e.path[0].body.clientHeight )
           // console.log( window.scrollY,e.path[0].body.offsetHeight )
           // console.log(e)
-let $scroll = Math.floor((window.scrollY*100)/(window.body.scrollHeight-window.innerHeight));
+        //  let informacion = navigator.userAgent;
+        // alert(informacion.split('/')[0]);
+        let $scroll = Math.floor((window.scrollY*100)/(window.body.scrollHeight-window.innerHeight));
 
           $bar.style.width = $scroll+'%';
         });

@@ -4,45 +4,48 @@
           $icon_add = d.getElementsByClassName('icon-add'),
           $bar = d.querySelector('.bar'),
           $close = [],
+          $week_days = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
           $btn_close = document.querySelector('#close'),
           $cont_cookies = document.querySelector('.cookies-box'),
+          $header = document.querySelector('.header'),
+          $menu = document.querySelector('.menu'),
           $modal = document.querySelector('.modal'),
+          $banner = document.querySelector('.banner'),
+          $date_banner = document.querySelector('.date-banner'),
           $ver_p = document.querySelector('#ver_pol'),
           $c_modal = document.querySelector('#close_modal'),
           $ac_cookie = document.querySelector('#aceptar_cookie'),
           $ac_cookie2 = document.querySelector('#aceptar_modal');
 
           
-        document.cookie == 'name=Kyle; ver_cookies=ok'? $cont_cookies.style.bottom = '-300px':"";
-        // console.log(document.cookie)
+        d.cookie == 'name=Kyle; ver_cookies=ok'? $cont_cookies.style.bottom = '-300px':"";
         function aceptarCookies(name, price, expireDays) {
             $cont_cookies.style.bottom = '-300px'
             let today = new Date()
             let expireDay = new Date(today.getTime() + (expireDays*24*60*60*1000));
-            // console.log(today, expireDay)
             let expireDate = "expires=" + expireDay.toUTCString();
-            // console.log(expireDate)
-            document.cookie = name +'='+ price + ';' + expireDate;
+            d.cookie = name +'='+ price + ';' + expireDate;
         }
         
         $ac_cookie.addEventListener('click', () => {
-            aceptarCookies("ver_cookies", "ok", 3);
+            aceptarCookies("ver_cookies", "ok", 1);
         })
         
         $ac_cookie2.addEventListener('click', () => {
-            aceptarCookies("ver_cookies", "ok", 3);
+            aceptarCookies("ver_cookies", "ok", 1);
             $modal.style.visibility = 'hidden'
             $modal.style.opacity = '0'
         })
         
         $btn_close.addEventListener('click', () => {
-            $cont_cookies.style.bottom = '-200px'
+            $cont_cookies.style.bottom = '-300px'
         })
         
         
         $ver_p.addEventListener('click', () => {
             $modal.style.visibility = 'visible'
             $modal.style.opacity = '1'
+            $cont_cookies.style.bottom = '-300px'
         })
         
         $c_modal.addEventListener('click', () => {
@@ -75,31 +78,33 @@
         }
         })
       }
-      // localStorage.setItem('hola', 'Bob')
-      // localStorage.removeItem('hola')
-      // sessionStorage.setItem('name', 'Carlos')
-      // Cookie.set("ieat", "true", {expires: 2});
+      
+      window.addEventListener("resize", ()=>{
 
-      // var myCookie = Cookie.get("ieat");
-      // // var title = Cookie.get("ieat");
+      })
+    
+      let today = new Date()
 
-      // if(myCookie){
+      $date_banner.innerHTML = $week_days[today.getDay()-1];
 
-      // }
-      // // sessionStorage.removeItem('name', 'Carlos')
-      // document.cookie = 'name=Kyle; expires=' + new Date(2022,0,1).toUTCString()
     window.addEventListener("scroll", (e) => {
-          // console.log( window.pageYOffset)
-          // console.log( window.pageXOffset)
-          // console.log( window.offsetHeight)
-          // console.log( window.scrollY,e.path[0].body.scrollHeight )
-          // console.log( window.scrollY,e.path[0].body.clientTop  )
-          // console.log( window.scrollY,e.path[0].body.scrollLeft  )
-          // console.log( window.scrollY,e.path[0].body.clientHeight )
-          // console.log( window.scrollY,e.path[0].body.offsetHeight )
-          // console.log(e)
-        //  let informacion = navigator.userAgent;
-        // alert(informacion.split('/')[0]);
+       if(window.scrollY >=96){
+          $banner.style.display = "block";
+         
+          $header.style.top = "25px";
+          $menu.style.top = "25px";
+        } else{
+          $banner.style.display = "none";
+          $header.style.top = "0";
+        } 
+
+        if(window.scrollY >=96 && window.innerWidth >=700){
+          $menu.style.top = "25px";
+        }else{
+          
+          $menu.style.top = "";
+        }        
+    
         let $scroll = Math.floor((window.scrollY*100)/(window.body.scrollHeight-window.innerHeight));
 
           $bar.style.width = $scroll+'%';

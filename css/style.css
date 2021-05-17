@@ -614,6 +614,19 @@ div figure{
     width: 0%;
     height: 5px;
 }
+.banner{
+    display: none;
+}
+.banner{
+    position: fixed;
+    width: 100%;
+    top: 5px;
+    z-index: 20;
+    background-color: black;
+}
+.container-banner p {
+    padding: 2px;
+}
 
 .cookies-box {
     position: fixed;

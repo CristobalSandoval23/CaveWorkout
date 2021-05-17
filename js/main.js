@@ -80,7 +80,12 @@
       }
       
       window.addEventListener("resize", ()=>{
-
+        if(window.innerWidth >=700){
+          $menu.style.top = "25px";
+        }else{
+          
+          $menu.style.top = "";
+        }      
       })
     
       let today = new Date()
@@ -92,7 +97,6 @@
           $banner.style.display = "block";
          
           $header.style.top = "25px";
-          $menu.style.top = "25px";
         } else{
           $banner.style.display = "none";
           $header.style.top = "0";

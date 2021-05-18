@@ -99,4 +99,4 @@
         }        
       $bar.style.width = $scroll+'%';
         });
-  })(d);
+  })(document);

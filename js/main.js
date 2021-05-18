@@ -19,7 +19,8 @@
 
         let today = new Date()
         $date_banner.innerHTML = $week_days[today.getDay()-1]; 
-        d.cookie == 'name=Kyle; ver_cookies=ok'? $cont_cookies.style.bottom = '-300px':"";
+        // d.cookie == 'name=Kyle; ver_cookies=ok'? $cont_cookies.style.bottom = '-300px':"";
+        d.cookie == 'ver_cookies=ok'? $cont_cookies.style.bottom = '-300px':"";
         
         function aceptarCookies(name, price, expireDays) {
             $cont_cookies.style.bottom = '-300px'

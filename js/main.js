@@ -5,17 +5,17 @@
           $bar = d.querySelector('.bar'),
           $close = [],
           $week_days = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
-          $cont_cookies = document.querySelector('.cookies-box'),
-          $header = document.querySelector('.header'),
-          $menu = document.querySelector('.menu'),
-          $modal = document.querySelector('.modal'),
-          $banner = document.querySelector('.banner'),
-          $date_banner = document.querySelector('.date-banner'),
-          $btn_close = document.querySelector('#close'),
-          $ver_p = document.querySelector('#ver_pol'),
-          $c_modal = document.querySelector('#close_modal'),
-          $ac_cookie = document.querySelector('#aceptar_cookie'),
-          $ac_cookie2 = document.querySelector('#aceptar_modal');
+          $cont_cookies = d.querySelector('.cookies-box'),
+          $header = d.querySelector('.header'),
+          $menu = d.querySelector('.menu'),
+          $modal = d.querySelector('.modal'),
+          $banner = d.querySelector('.banner'),
+          $date_banner = d.querySelector('.date-banner'),
+          $btn_close = d.querySelector('#close'),
+          $ver_p = d.querySelector('#ver_pol'),
+          $c_modal = d.querySelector('#close_modal'),
+          $ac_cookie = d.querySelector('#aceptar_cookie'),
+          $ac_cookie2 = d.querySelector('#aceptar_modal');
 
         let today = new Date()
         $date_banner.innerHTML = $week_days[today.getDay()-1]; 
@@ -36,7 +36,7 @@
 
       d.addEventListener("click", (e) => {
           if(e.target.matches("#aceptar_cookie")) {
-            aceptarCookies("ver_cookies", "ok", 1);
+            aceptarCookies("ver_cookies", "ok", 3);
           }
           (e.target.matches("#close"))? $cont_cookies.style.bottom = '-300px':'';
           if(e.target.matches("#ver_pol")){
@@ -44,9 +44,8 @@
             $modal.style.opacity = '1'
             $cont_cookies.style.bottom = '-300px'
           }
-          
           if(e.target.matches("#aceptar_modal")) {
-          aceptarCookies("ver_cookies", "ok", 1);
+          aceptarCookies("ver_cookies", "ok", 3);
           $modal.style.visibility = 'hidden'
           $modal.style.opacity = '0'
           }
@@ -75,14 +74,13 @@
         })
       }
       
-      window.addEventListener("resize", ()=>{
+    window.addEventListener("resize", ()=>{
         if(window.innerWidth >=700){
           $menu.style.top = "25px";
-        }else{
-          
+        }else{   
           $menu.style.top = "";
         }      
-      })
+    })
 
     window.addEventListener("scroll", (e) => {
       let $scroll = Math.floor((window.scrollY*100)/(window.body.scrollHeight-window.innerHeight));
@@ -101,4 +99,4 @@
         }        
       $bar.style.width = $scroll+'%';
         });
-  })(document);
+  })(d);

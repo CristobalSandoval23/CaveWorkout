@@ -436,6 +436,9 @@ div figure{
     .menu a h2:hover{
         opacity: 0.5;
     }
+    .image-transform{
+        padding: 0px 120px;
+    }
      
  }
 /* ********** Footer ********** */

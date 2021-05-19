@@ -10,12 +10,7 @@
           $menu = d.querySelector('.menu'),
           $modal = d.querySelector('.modal'),
           $banner = d.querySelector('.banner'),
-          $date_banner = d.querySelector('.date-banner'),
-          $btn_close = d.querySelector('#close'),
-          $ver_p = d.querySelector('#ver_pol'),
-          $c_modal = d.querySelector('#close_modal'),
-          $ac_cookie = d.querySelector('#aceptar_cookie'),
-          $ac_cookie2 = d.querySelector('#aceptar_modal');
+          $date_banner = d.querySelector('.date-banner');
 
         let today = new Date()
         $date_banner.innerHTML = $week_days[today.getDay()-1]; 

@@ -436,9 +436,10 @@ div figure{
     .menu a h2:hover{
         opacity: 0.5;
     }
-      .image-transform{
+    .image-transform{
         width: auto;
         padding: 0px 120px;
+        opacity: 0.6;
     }
      
  }

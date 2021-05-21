@@ -172,6 +172,7 @@ body {
 }
 .image-transform{
     width: 70%;
+    opacity: 0.6;
 }
 .img-fundadores{
     width: 350px;
@@ -439,7 +440,7 @@ div figure{
     .image-transform{
         width: auto;
         padding: 0px 120px;
-        opacity: 0.6;
+        
     }
      
  }

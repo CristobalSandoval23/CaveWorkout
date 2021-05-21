@@ -454,6 +454,37 @@ div figure{
 
 
 /* ********** Utilities ********** */
+.write-text{
+    position:relative;
+    z-index: 10;
+    right: 0;
+    width: 0;
+    background-color: var(--third-color);
+    border-left:  1px solid #000;
+    animation: write 5s infinite alternate;
+}
+
+@keyframes write {
+    from {
+        width: 73%;
+    }
+    to {
+        width: 29%;
+
+    }
+}
+.rebote{
+    animation: rebote 1s alternate infinite;
+}
+
+@keyframes rebote {
+    0%{
+      transform: translateY(-20%);  
+    }
+    100%{
+      transform: translateY(0%);
+    }
+}
 .parallax {
 	position: fixed;
     z-index: -100;
@@ -594,19 +625,6 @@ div figure{
     }
 }
 
-.icon_email{
-    animation: rebote 1s alternate infinite;
-}
-
-@keyframes rebote {
-    0%{
-      transform: translateY(-20%);  
-    }
-    100%{
-      transform: translateY(0%);
-    }
-}
-
 .container-bar{
     position: fixed;
     z-index: 20;
@@ -632,6 +650,7 @@ div figure{
 .container-banner p {
     padding: 2px;
 }
+
 
 .cookies-box {
     position: fixed;

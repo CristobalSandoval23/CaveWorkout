@@ -10,6 +10,7 @@
           $menu = d.querySelector('.menu'),
           $modal = d.querySelector('.modal'),
           $banner = d.querySelector('.banner'),
+          $holaa = d.querySelector('.write'),
           $date_banner = d.querySelector('.date-banner');
 
         let today = new Date()
@@ -24,6 +25,27 @@
             let expireDate = "expires=" + expireDay.toUTCString();
             d.cookie = name +'='+ price + ';' + expireDate;
         }
+
+        let writing = str => {
+            $holaa.innerHTML = '';
+            let arrFromStr = str.split('');
+            let i = 0;
+            let printStr = setInterval(() => {
+              if(arrFromStr[i] === ''){
+                $holaa.innerHTML += arrFromStr[i];
+                $holaa.innerHTML += arrFromStr[i + 1];
+                i += 2;
+              }else{
+                $holaa.innerHTML += arrFromStr[i];
+                i++;
+              }
+              if(i === arrFromStr.length){
+                clearInterval(printStr);
+              }
+            }, 300);
+        }
+
+        // writing($holaa.textContent);
 
         for (let i = 0; i < $accordion.length; i++) {
           verdadero = true;

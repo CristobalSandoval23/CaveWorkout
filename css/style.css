@@ -166,9 +166,28 @@ body {
 }
 .hero-image-texts{
     position: absolute;
-    bottom: 30%;
-    right: 1%;
-    padding: 0px 20px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    color: var(--background-color-transparent);
+    height: 363px;
+    width: 260px;
+    bottom: 5%;
+    padding: 20px;
+}
+.hero-image-texts-title{
+    font-size: 25px;
+    color: var(--icon-color);
+}
+.hero-image-texts i {
+    font-size: 50px;
+}
+.hero-image-texts:hover{
+    color: var(--icon-color);
+    background-color: black;
+    border-radius: 15px;
+    justify-content: center;
+    transition: 0.5s ease-out;
 }
 .image-transform{
     width: 70%;

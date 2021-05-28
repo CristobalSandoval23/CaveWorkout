@@ -117,4 +117,17 @@
         }        
       $bar.style.width = $scroll+'%';
         });
+        if (navigator.serviceWorker){
+          navigator.serviceWorker.register('/sw.js')
+          .then(reg => {
+            // setTimeout(()=>{
+            //   reg.sync.register('posteo-gatitos');
+            //   console.log('Se envioron fotos de gatitos al server')
+            // },1000);
+            // Notification.requestPermission().then(result =>{
+            //   console.log(result);
+            //   reg.showNotification('HOla Mundo')
+            // })
+          })
+        }
   })(document);

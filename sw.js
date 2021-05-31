@@ -1,102 +1,140 @@
-const cache_name = 'cache-2';
-const cache_static_name = 'static-2';
-const cache_inmutable_name = 'static-2';
-const cache_dynamic_name = 'dynamic-2';
-self.addEventListener('install', event => {
-   const cacheProm = caches.open(cache_static_name)
-        .then(cache => {
-           return cache.addAll([
-            '/',
-            '/index.html',
-           ])
-        })
-        const cacheInmutable = caches.open(cache_inmutable_name)
-        .then(cache =>  cache.add(['/index.html',]))
-        event.waitUntil(Promise.all([cacheProm,cacheInmutable]));
-//     console.log('instalando')
-//     let respuesta = new Promise( (resolve, reject)=> {
-//         setTimeout(()=>{
-//             console.log('Instalaciones terminadas')
-//             self.skipWaiting();
-//             resolve();
-//         }, 1000)
-//     })
-//     event.waitUntil(respuesta);
+const CACHE_STATIC_NAME  = 'static-v2';
+const CACHE_DYNAMIC_NAME = 'dynamic-v2';
+const CACHE_INMUTABLE_NAME = 'inmutable-v2';
 
-})
+const CACHE_DYNAMIC_LIMIT = 50;
 
-// self.addEventListener('activate', event => {
-//     console.log('activación')
-    
-// })
 
-// self.addEventListener('sync', event =>{
-    
-// })
-// self.addEventListener('push', event =>{
-//     console.log('Notificacion recibida')
-// })
-self.addEventListener('fetch', event => {
-    // TODO sale del cache 
-    event.respondWith(caches.match(event.request))
-    // cache with network fallback
-    caches.match(event.request)
-                .then(resp =>{
-                    if(resp) return resp;
-                    console.log()
+function limpiarCache( cacheName, numeroItems ) {
 
-                    return fetch(event.request).then(newResp =>{
-                        caches.open(cache_dynamic_name)
-                            .then( cache => {
-                                cache.put(event.request, newResp);
-                            });
-                    return newResp.clone();
-                    })
-                })
-    // const offlineResp = new Response(`
-    // Bienvenido a mi página web 
-    // Disculpa, pero para usarla, necesitas internet
-    // `)
-    // // {
-    // //     headers:{
-    // //         'Content-type':
-    // //     }
-    // // }
-    // ;
 
-    const resp = fetch(event.request).catch(() => offlineResp);
-    event.respondWith(resp);
-    // if(event.request.url.includes('style.css')){
-        // event.respondWith(null);
-        // Forma de hacer peticiones en Fetch
-        // let fotoReq = fetch('img/main.jpg')
-        // let fotoReq = fetch(event.request.url)
-        // let fotoReq = fetch(event.request)
-        // console.log(fotoReq);
+    caches.open( cacheName )
+        .then( cache => {
 
-        // Como interceptar  
-        // let respuesta = new Response(`
-        // body {
-        //     background-color: red ! important;
-        //     color: pink;
-        // }`,
-        // {
-        //     headers: {
-        //         'Content-Type':'text/css'
-        //     }
-        // });
-        // event.respondWith(respuesta);
+            return cache.keys()
+                .then( keys => {
+                    
+                    if ( keys.length > numeroItems ) {
+                        cache.delete( keys[0] )
+                            .then( limpiarCache(cacheName, numeroItems) );
+                    }
+                });
 
-    // }
+            
+        });
+}
 
-    // event.respondWith(
-    //     fetch(event.request)
-    //     .then(resp => {
-    //         if(resp.ok){
-    //             return resp;
-    //         }else{
-    //             return fetch('assets/Foto1.jpg')
-    //         }
-    //     })
-    // )
-})
+
+
+
+self.addEventListener('install', e => {
+    // const cacheProm = caches.open(cache_static_name)
+    // .then(cache => {
+    //    return cache.addAll([
+    //     '/',
+    //     '/index.html',
+    //    ])
+    // })
+
+    const cacheProm = caches.open( CACHE_STATIC_NAME )
+        .then( cache => {
+
+            return cache.addAll([
+                '/',
+                '/index.html',
+                '/css/style.css',
+                '/assets/Antes.jpg',
+                '/assets/cristobal.jpg',
+                '/assets/Foto1.jpg',
+                '/assets/Foto2.jpg',
+                '/assets/Foto3.jpg',
+                '/assets/Foto4.jpg',
+                '/assets/Foto5.jpg',
+                '/assets/logo.png',
+                '/assets/nicolas.jpg',
+                '/assets/training-1.png',
+                '/js/main.js',
+                '/pages/offline.html',
+            ]);
+
+        
+        });
+
+    const cacheInmutable = caches.open( CACHE_INMUTABLE_NAME )
+            .then( cache => cache.add('/index.html'));
+            console.log(cacheProm);
+    e.waitUntil( Promise.all([cacheProm, cacheInmutable]) );
+
+});
+
+
+self.addEventListener('activate', e => {
+
+
+    const respuesta = caches.keys().then( keys => {
+
+        keys.forEach( key => {
+
+            // static-v4
+            if (  key !== CACHE_STATIC_NAME && key.includes('static') ) {
+                return caches.delete(key);
+            }
+            if (  key !== CACHE_DYNAMIC_NAME && key.includes('dynamic') ) {
+                return caches.delete(key);
+            }
+            if (  key !== CACHE_INMUTABLE_NAME && key.includes('inmutable') ) {
+                return caches.delete(key);
+            }
+
+        });
+
+    });
+
+    e.waitUntil( respuesta );
+
+});
+
+
+
+
+
+self.addEventListener('fetch', e => {
+
+    // 2- Cache with Network Fallback
+    const respuesta = caches.match( e.request )
+        .then( res => {
+
+            if ( res ) return res;
+
+            // No existe el archivo
+
+            return fetch( e.request ).then( newResp => {
+
+                caches.open( CACHE_DYNAMIC_NAME )
+                    .then( cache => {
+                        cache.put( e.request, newResp );
+                        limpiarCache( CACHE_DYNAMIC_NAME, 50 );
+                    });
+
+                return newResp.clone();
+            })
+            .catch( err => {
+
+                if ( e.request.headers.get('accept').includes('text/html') ) {
+                    return caches.match('/pages/offline.html');
+                }
+
+            
+            });
+
+
+        });
+
+
+
+
+    e.respondWith( respuesta );
+
+
+
+});

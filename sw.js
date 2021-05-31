@@ -54,6 +54,7 @@ self.addEventListener('install', e => {
                 '/assets/nicolas.jpg',
                 '/assets/training-1.png',
                 '/js/main.js',
+                '/manifest.json',
                 '/pages/offline.html',
             ]);
 

@@ -4,7 +4,7 @@
           $icon_add = d.getElementsByClassName('icon-add'),
           $bar = d.querySelector('.bar'),
           $close = [],
-          $week_days = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
+          $week_days = ['Domingo','Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sábado'],
           $cont_cookies = d.querySelector('.cookies-box'),
           $header = d.querySelector('.header'),
           $menu = d.querySelector('.menu'),
@@ -14,7 +14,7 @@
           $date_banner = d.querySelector('.date-banner');
 
         let today = new Date()
-        $date_banner.innerHTML = $week_days[today.getDay()-1]; 
+        $date_banner.innerHTML = $week_days[today.getDay()]; 
         // d.cookie == 'name=Kyle; ver_cookies=ok'? $cont_cookies.style.bottom = '-300px':"";
         d.cookie == 'ver_cookies=ok'? $cont_cookies.style.bottom = '-300px':"";
         
@@ -129,5 +129,23 @@
             //   reg.showNotification('HOla Mundo')
             // })
           })
+        }
+        if(window.caches){
+          // caches.open('prueba-2').then(cache =>{
+          //   cache.addAll([
+          //     '/index.html'
+          //   ]).then(()=>{
+          //     // cache.delete('/index.html');
+          //     cache.put('index.hmtl', new Response('hola mundo'))
+          //   });
+          //   cache.match('/index.html')
+          //         .then(resp =>{
+          //           resp.text().then(console.log);
+          //         })
+          // }); // crear cache nuevo
+          caches.delete('prueba-1')
+          caches.keys().then( keys =>{
+            console.log(keys);
+          });
         }
   })(document);

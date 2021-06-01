@@ -11,6 +11,8 @@
           $modal = d.querySelector('.modal'),
           $banner = d.querySelector('.banner'),
           $holaa = d.querySelector('.write'),
+          $url = window.location.href,
+          $swLocation = '/CaveWorkout/sw.js',
           $date_banner = d.querySelector('.date-banner');
 
         let today = new Date()
@@ -118,17 +120,12 @@
       $bar.style.width = $scroll+'%';
         });
         if (navigator.serviceWorker){
-          navigator.serviceWorker.register('/sw.js')
-          .then(reg => {
-            // setTimeout(()=>{
-            //   reg.sync.register('posteo-gatitos');
-            //   console.log('Se envioron fotos de gatitos al server')
-            // },1000);
-            // Notification.requestPermission().then(result =>{
-            //   console.log(result);
-            //   reg.showNotification('HOla Mundo')
-            // })
-          })
+          if($url.includes('127.0.0.1:5500')){
+            $swLocation = '/sw.js';
+          }
+
+          navigator.serviceWorker.register($swLocation)
+          
         }
         if(window.caches){
           // caches.open('prueba-2').then(cache =>{

@@ -2,19 +2,7 @@ const STATIC_CACHE    = 'static-v4';
 const DYNAMIC_CACHE   = 'dynamic-v2';
 const INMUTABLE_CACHE = 'inmutable-v1';
 
-
-function actualizaCacheDinamico( dynamicCache, req, res ) {
-
-    if ( res.ok ) {
-        return caches.open( dynamicCache ).then( cache => {
-            cache.put( req, res.clone() );  
-            return res.clone();
-        });
-    } else {
-        return res;
-    }
-
-}
+const CACHE_DYNAMIC_LIMIT = 50;
 
 const APP_SHELL = [
     // '/',
@@ -40,41 +28,65 @@ const APP_SHELL_INMUTABLE = [
 ];
 
 
+function limpiarCache( cacheName, numeroItems ) {
+
+
+    caches.open( cacheName )
+        .then( cache => {
+
+            return cache.keys()
+                .then( keys => {
+                    
+                    if ( keys.length > numeroItems ) {
+                        cache.delete( keys[0] )
+                            .then( limpiarCache(cacheName, numeroItems) );
+                    }
+                });
+
+            
+        });
+}
+
+
 self.addEventListener('install', e => {
 
-    const cacheDynamic = caches.open( DYNAMIC_CACHE ).then(cache =>
 
-        cache.addAll( [''] ));  // En realidad si no se usa hay que sacar el DYNAMIC_CACHE de todos lados pero lo dejo como ejemplo
-    const cacheStatic = caches.open( STATIC_CACHE ).then(cache => 
-        cache.addAll( APP_SHELL ));
+    const cacheProm = caches.open( STATIC_CACHE )
+        .then( cache => {
 
-    const cacheInmutable = caches.open( INMUTABLE_CACHE ).then(cache => 
-        cache.addAll( APP_SHELL_INMUTABLE ));
+            return cache.addAll(
+                APP_SHELL
+            );
+
+        
+        });
+
+    const cacheInmutable = caches.open( INMUTABLE_CACHE )
+            .then( cache => cache.add(APP_SHELL_INMUTABLE));
 
 
-
-    e.waitUntil( Promise.all([ cacheStatic, cacheInmutable, cacheDynamic  ])  );
+    e.waitUntil( Promise.all([cacheProm, cacheInmutable]) );
 
 });
 
 
 self.addEventListener('activate', e => {
 
+
     const respuesta = caches.keys().then( keys => {
 
         keys.forEach( key => {
 
+            // static-v4
             if (  key !== STATIC_CACHE && key.includes('static') ) {
-                return caches.delete(key);
-            }
-
-            if (  key !== DYNAMIC_CACHE && key.includes('dynamic') ) {
                 return caches.delete(key);
             }
 
         });
 
     });
+
+
 
     e.waitUntil( respuesta );
 
@@ -83,29 +95,45 @@ self.addEventListener('activate', e => {
 
 
 
-self.addEventListener( 'fetch', e => {
+
+self.addEventListener('fetch', e => {
 
 
-    const respuesta = caches.match( e.request ).then( res => {
+    // 2- Cache with Network Fallback
+    const respuesta = caches.match( e.request )
+        .then( res => {
 
-        if ( res ) {
-            return res;
-        } else {
+            if ( res ) return res;
 
-            return fetch( e.request ).then( newRes => {
+            // No existe el archivo
 
-                return actualizaCacheDinamico( DYNAMIC_CACHE, e.request, newRes );
+            return fetch( e.request ).then( newResp => {
 
+                caches.open( DYNAMIC_CACHE )
+                    .then( cache => {
+                        cache.put( e.request, newResp );
+                        limpiarCache( DYNAMIC_CACHE, CACHE_DYNAMIC_LIMIT );
+                    });
+
+                return newResp.clone();
+            })
+            .catch( err => {
+
+                if ( e.request.headers.get('accept').includes('text/html') ) {
+                    return caches.match('/pages/offline.html');
+                }
+
+            
             });
 
-        }
 
-    });
+        });
+
 
 
 
     e.respondWith( respuesta );
 
+
+
 });
-
-

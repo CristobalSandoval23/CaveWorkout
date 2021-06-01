@@ -5,22 +5,14 @@ const INMUTABLE_CACHE = 'inmutable-v1';
 
 function actualizaCacheDinamico( dynamicCache, req, res ) {
 
-
     if ( res.ok ) {
-
         return caches.open( dynamicCache ).then( cache => {
-
-            cache.put( req, res.clone() );
-            
+            cache.put( req, res.clone() );  
             return res.clone();
-
         });
-
     } else {
         return res;
     }
-
-
 
 }
 

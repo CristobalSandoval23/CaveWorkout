@@ -14,8 +14,16 @@
           $date_banner = d.querySelector('.date-banner');
 
     let  $url = window.location.href,
-         $swLocation = '/CaveWorkout/sw.js';      
+         $swLocation = '/caveworkout/sw.js';   
 
+         if (navigator.serviceWorker){
+          if($url.includes('127.0.0.1:5500')){
+            $swLocation = '/sw.js';
+          }
+
+          navigator.serviceWorker.register($swLocation)
+          
+        }
         let today = new Date()
         $date_banner.innerHTML = $week_days[today.getDay()]; 
         // d.cookie == 'name=Kyle; ver_cookies=ok'? $cont_cookies.style.bottom = '-300px':"";
@@ -118,12 +126,5 @@
         }        
       $bar.style.width = $scroll+'%';
         });
-        if (navigator.serviceWorker){
-          if($url.includes('127.0.0.1:5500')){
-            $swLocation = '/sw.js';
-          }
-
-          navigator.serviceWorker.register($swLocation)
-          
-        }
+     
   })(document);

@@ -14,14 +14,14 @@
           $date_banner = d.querySelector('.date-banner');
 
     let  $url = window.location.href,
-         $swLocation = '/caveworkout/sw.js';   
-
+         $swLocation = '/CaveWorkout/sw.js';   
+            
          if (navigator.serviceWorker){
           if($url.includes('127.0.0.1:5500')){
             $swLocation = '/sw.js';
           }
 
-          navigator.serviceWorker.register($swLocation)
+          navigator.serviceWorker.register($swLocation);
           
         }
         let today = new Date()

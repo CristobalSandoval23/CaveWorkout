@@ -2,7 +2,7 @@
   "name": "CaveWorkout",
   "short_name": "CaveWorkout",
   "description": "Bienvenid@s a #CaveWorkout, serie de videos, donde te daré consejos para llevar una vida saludable y evitar el sedentarismo. Recuerda... mente sana en cuerpo sano :)",
-  "start_url": "/index.html",
+  "start_url": "index.html",
   "background_color": "black",
   "theme_color": "#F0DB4F",
   "display": "fullscreen",

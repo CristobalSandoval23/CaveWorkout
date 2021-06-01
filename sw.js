@@ -42,7 +42,9 @@ const APP_SHELL_INMUTABLE = [
 
 self.addEventListener('install', e => {
 
+    const cacheDynamic = caches.open( DYNAMIC_CACHE ).then(cache =>
 
+        cache.addAll( [''] ));  // En realidad si no se usa hay que sacar el DYNAMIC_CACHE de todos lados pero lo dejo como ejemplo
     const cacheStatic = caches.open( STATIC_CACHE ).then(cache => 
         cache.addAll( APP_SHELL ));
 
@@ -51,7 +53,7 @@ self.addEventListener('install', e => {
 
 
 
-    e.waitUntil( Promise.all([ cacheStatic, cacheInmutable ])  );
+    e.waitUntil( Promise.all([ cacheStatic, cacheInmutable, cacheDynamic  ])  );
 
 });
 

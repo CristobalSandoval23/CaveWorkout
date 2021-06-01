@@ -11,9 +11,10 @@
           $modal = d.querySelector('.modal'),
           $banner = d.querySelector('.banner'),
           $holaa = d.querySelector('.write'),
-          $url = window.location.href,
-          $swLocation = '/CaveWorkout/sw.js',
           $date_banner = d.querySelector('.date-banner');
+
+    let  $url = window.location.href,
+         $swLocation = '/CaveWorkout/sw.js';      
 
         let today = new Date()
         $date_banner.innerHTML = $week_days[today.getDay()]; 
@@ -46,8 +47,6 @@
               }
             }, 300);
         }
-
-        // writing($holaa.textContent);
 
         for (let i = 0; i < $accordion.length; i++) {
           verdadero = true;
@@ -126,23 +125,5 @@
 
           navigator.serviceWorker.register($swLocation)
           
-        }
-        if(window.caches){
-          // caches.open('prueba-2').then(cache =>{
-          //   cache.addAll([
-          //     '/index.html'
-          //   ]).then(()=>{
-          //     // cache.delete('/index.html');
-          //     cache.put('index.hmtl', new Response('hola mundo'))
-          //   });
-          //   cache.match('/index.html')
-          //         .then(resp =>{
-          //           resp.text().then(console.log);
-          //         })
-          // }); // crear cache nuevo
-          caches.delete('prueba-1')
-          caches.keys().then( keys =>{
-            console.log(keys);
-          });
         }
   })(document);
